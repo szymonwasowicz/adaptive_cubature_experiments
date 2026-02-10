@@ -2,7 +2,7 @@
 
 
 
-This repository contains the numerical experiment software for the paper **"Adaptive integration of convex functions of multiple variables"** by **Andrzej Komisarski** and **Szymon Wąsowicz**. This is the research code for computing multiple integrals over n-dimensional simplices using \*\*Adaptive Cubature\*\* algorithms based on barycentric subdivision.
+This repository contains the numerical experiment software for the paper **"Adaptive integration of convex functions of multiple variables"** by **Andrzej Komisarski** and **Szymon Wąsowicz**. This is the research code for computing multiple integrals over n-dimensional simplices using **Adaptive Cubature** algorithms based on barycentric subdivision.
 
 
 
@@ -30,23 +30,23 @@ The project explores an adaptive strategy for numerical integration. Instead of 
 
 ### 1. Core Functions
 
-* **adaptive\_cubature\_experiments.py`**: The main library containing:
+* **`adaptive_cubature_experiments.py`**: The main library containing:
 
-* `experiment\_ndim`: General adaptive cubature logic using NumPy.
+* `experiment_ndim`: General adaptive cubature logic using NumPy.
 
-* `experiment\_2dim`: Optimized 2D version.
+* `experiment_2dim`: Optimized 2D version.
 
-* `experiment\_2dim\_plot`: Version with Matplotlib integration for mesh visualization.
+* `experiment_2dim_plot`: Version with Matplotlib integration for mesh visualization.
 
-* **`adaptive\_cubature\_experiments\_gpu.py`**: A GPU-accelerated version of the n-dimensional algorithm using **PyTorch**. This version significantly speeds up computation for deep subdivision levels or high dimensions.
+* **`adaptive_cubature_experiments_gpu.py`**: A GPU-accelerated version of the n-dimensional algorithm using **PyTorch**. This version significantly speeds up computation for deep subdivision levels or high dimensions.
 
 
 
 ### 2. Jupyter Notebooks (Frontend)
 
-* **`adaptive\_cubature\_experiments.ipynb`**: Demonstrates the CPU algorithms, shows convergence, and generates plots for 2D and 3D cases.
+* **`adaptive_cubature_experiments.ipynb`**: Demonstrates the CPU algorithms, shows convergence, and generates plots for 2D and 3D cases.
 
-* **`adaptive\_cubature\_experiments\_gpu.ipynb`**: Demonstrates the performance gains using GPU acceleration for 4D and higher-dimensional simplices.
+* **`adaptive_cubature_experiments_gpu.ipynb`**: Demonstrates the performance gains using GPU acceleration for 4D and higher-dimensional simplices.
 
 
 
@@ -68,19 +68,20 @@ Simply run the provided notebooks to replicate the experiments or import the fun
 
 ```python
 
-from adaptive\_cubature\_experiments import experiment\_ndim
+from adaptive_cubature_experiments import experiment_ndim
 
 import numpy as np
 
 
 
-\# Define a function and a simplex
+# Define a function and a simplex
 
-f = lambda x: np.exp(-np.sum(x\*\*2, axis=-1))
+f = lambda x: np.exp(-np.sum(x**2, axis=-1))
 
-S = np.array(\[\[0,0], \[1,0], \[0,1]]) # 2D Unit Simplex
+S = np.array([[0,0], [1,0], [0,1]]) # 2D Unit Simplex
 
 
 
-experiment\_ndim(f, S, epsilon=1e-5)
+experiment_ndim(f, S, epsilon=1e-5)
+
 
