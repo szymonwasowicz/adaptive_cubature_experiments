@@ -2,7 +2,7 @@
 
 
 
-This repository contains the numerical experiment software for the paper **"Adaptive integration of convex functions of multiple variables"** by **Andrzej Komisarski** and **Szymon Wąsowicz**. This is the research code for computing multiple integrals over n-dimensional simplices using **Adaptive Cubature** algorithms based on barycentric subdivision.
+This repository contains the numerical experiment software for the paper **Adaptive integration of convex functions of multiple variables** by **Andrzej Komisarski** and **Szymon Wąsowicz**. This is the research code for computing multiple integrals over n-dimensional simplices using **Adaptive Cubature** algorithms based on barycentric subdivision.
 
 
 
@@ -83,5 +83,6 @@ S = np.array([[0,0], [1,0], [0,1]]) # 2D Unit Simplex
 
 
 experiment_ndim(f, S, epsilon=1e-5)
+
 
 
